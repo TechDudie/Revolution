@@ -18,7 +18,7 @@ canvas.bind("<Button-1>", lclick)
 canvas.bind("<Button-3>", rclick)
 canvas.bind("<Key>", key)
 
-map = Map(canvas)
-earth.generator(map)
+world_map = Map(canvas)
+earth.generator(world_map)
 
 root.mainloop()
