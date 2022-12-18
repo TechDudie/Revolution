@@ -6,6 +6,8 @@ from src.event import *
 
 import src.planets.earth as earth
 
+import src.structures.tree as tree
+
 root = tk.Tk()
 
 root.geometry("1280x640+100+100")
@@ -18,7 +20,7 @@ canvas.bind("<Button-1>", lclick)
 canvas.bind("<Button-3>", rclick)
 canvas.bind("<Key>", key)
 
-world_map = Map(canvas)
-earth.generator(world_map)
+map = Map(canvas)
+earth.generator(map, canvas)
 
 root.mainloop()
