@@ -2,6 +2,7 @@ import tkinter as tk
 
 from src.tile import *
 from src.map import *
+from src.item import *
 from src.event import *
 
 import src.planets.earth as earth
@@ -22,5 +23,8 @@ canvas.bind("<Key>", key)
 
 map = Map(canvas)
 earth.generator(map, canvas)
+
+setupCanvas(canvas)
+setupHUD()
 
 root.mainloop()
