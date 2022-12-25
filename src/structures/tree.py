@@ -8,7 +8,6 @@ class Tree(Structure):
         self.width = 7
         self.hitbox = (5, 5)
         self.hp = 3
-        self.status = 0
 
     def click(self, event):
         if self.location[0] < event.x / 32 < self.location[0] + self.hitbox[0] and self.location[1] < event.y / 32 < self.location[1] + self.hitbox[1]:
@@ -31,3 +30,4 @@ class Tree(Structure):
                 for i in range(1, 4):
                     map.safe_create("leaves", self.location[0] + 7, self.location[1] + i)
                 update()
+                return True

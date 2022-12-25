@@ -17,14 +17,15 @@ root.title("Revolution")
 canvas = tk.Canvas(root, width=1280, height=640)
 canvas.pack()
 
-canvas.bind("<Button-1>", lclick)
-canvas.bind("<Button-3>", rclick)
-canvas.bind("<Key>", key)
-
 map = Map(canvas)
 earth.generator(map, canvas)
 
 setupCanvas(canvas)
+setupMap(map)
 setupHUD()
+
+canvas.bind("<Button-1>", lclick)
+canvas.bind("<Button-3>", rclick)
+canvas.bind("<Key>", key)
 
 root.mainloop()
