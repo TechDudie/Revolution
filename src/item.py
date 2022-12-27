@@ -3,16 +3,25 @@ import tkinter as tk
 from .tile import *
 
 global items
-global canvas
+global excpetions
 items = {"log": 0}
+EXCEPTIONS = ["leaves"]
+
+global canvas
 item_tiles = {}
 canvas = None
+
+def setupCanvas(tkCanvas: tk.Canvas):
+    global canvas
+    canvas = tkCanvas
 
 class Item: # I might use this class in the future, but atm, I'm not using it
     def __init__(self):
         pass
 
 def add_item(type: str, quantity: int) -> int:
+    if type in EXCEPTIONS:
+        return
     items[type] += quantity
     updateHUD(type)
     return items[type]
@@ -29,10 +38,6 @@ def set_item(type: str, quantity: int) -> int:
 
 def get_item(type: str) -> int:
     return items[type]
-
-def setupCanvas(tkCanvas: tk.Canvas):
-    global canvas
-    canvas = tkCanvas
 
 def setupHUD():
     global canvas

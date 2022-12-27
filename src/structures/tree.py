@@ -1,3 +1,5 @@
+import time
+
 from ..structure import *
 from ..update import *
 
@@ -24,10 +26,13 @@ class Tree(Structure):
                 map.create("log", self.location[0] + 3, self.location[1] + 2)
                 map.create("log", self.location[0] + 4, self.location[1] + 2)
                 for i in range(0, 5):
-                    map.safe_create("leaves", self.location[0] + 5, self.location[1] + i)
+                    if map.safe_create("leaves", self.location[0] + 5, self.location[1] + i):
+                        map.map[self.location[1] + i][self.location[0] + 5].metadata["time"] = time.time()
                 for i in range(0, 5):
-                    map.safe_create("leaves", self.location[0] + 6, self.location[1] + i)
+                    if map.safe_create("leaves", self.location[0] + 6, self.location[1] + i):
+                        map.map[self.location[1] + i][self.location[0] + 6].metadata["time"] = time.time()
                 for i in range(1, 4):
-                    map.safe_create("leaves", self.location[0] + 7, self.location[1] + i)
+                    if map.safe_create("leaves", self.location[0] + 7, self.location[1] + i):
+                        map.map[self.location[1] + i][self.location[0] + 7].metadata["time"] = time.time()
                 update()
                 return True

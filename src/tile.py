@@ -8,6 +8,7 @@ class Tile:
         self.canvas = canvas
         self.name = name
         self.image = tk.PhotoImage(file=f"{tile_path}{name}.png")
+        self.metadata = {}
     
     def draw(self, x: int, y: int):
         self.canvas.create_image(x * 32, y * 32, image=self.image, anchor=tk.NW)
