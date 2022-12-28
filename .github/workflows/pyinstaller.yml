@@ -17,6 +17,7 @@ jobs:
 
     - run: pip install -r requirements.txt pyinstaller
     - run: pyinstaller -F main.py
+    - run: cp -r assets dist/assets
 
     - uses: actions/upload-artifact@v2
       with:
