@@ -3,12 +3,12 @@ import tkinter as tk
 from .tile import *
 
 class Map:
-    def __init__(self, canvas: tk.Canvas):
+    def __init__(self, canvas: tk.Canvas, width, height):
         self.canvas = canvas
         self.void = []
         self.map = []
-        self.width = int(1280 / 32)
-        self.height = int(640 / 32)
+        self.width = int(width / 32)
+        self.height = int(height / 32)
         self.allocate()
     
     def allocate(self):

@@ -35,4 +35,5 @@ class Tree(Structure):
                     if map.safe_create("leaves", self.location[0] + 7, self.location[1] + i):
                         map.map[self.location[1] + i][self.location[0] + 7].metadata["time"] = time.time()
                 update()
+            if self.hp >= 0:
                 return True
