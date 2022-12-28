@@ -17,10 +17,8 @@ root.title("Revolution")
 
 canvas = tk.Canvas(root, width=width, height=height, highlightthickness=0)
 canvas.place(x=0, y=0)
-
 map = Map(canvas, width, height)
 earth.generator(map, canvas)
-
 craft = CraftFrame(root, int(width / 4), int(height / 4), int(width / 2), int(height / 2))
 
 setupCanvas(canvas)
