@@ -68,7 +68,6 @@ def swap_item(index_a: int, index_b: int):
     buffer = inventory[index_a]
     inventory[index_a] = inventory[index_b]
     inventory[index_b] = buffer
-    print(inventory)
 
 def setupHUD():
     global canvas
