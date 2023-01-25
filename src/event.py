@@ -31,13 +31,12 @@ def lclick(event: tk.Event):
         tile = map.map[y][x].name
         add_item(tile, 1)
         map.delete(x, y)
-    except:
+    except AttributeError:
         pass
 
 def rclick(event: tk.Event):
     pass
 
 def key(event: tk.Event):
-    print(f"Pressed key: {event.char}")
     if event.char == "c":
         craft_frame.toggle()

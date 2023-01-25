@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class Window():
+class Window:
     def __init__(self, root, x: int, y: int, width: int, height: int):
         self.x = x
         self.y = y
