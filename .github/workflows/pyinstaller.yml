@@ -18,6 +18,7 @@ jobs:
     - run: pip install -r requirements.txt pyinstaller
     - run: pyinstaller -F --noconsole --icon=assets/gui/icon.ico main.py
     - run: cp -r assets dist/assets
+    - run: cp install-mac.sh dist/install-mac.sh
 
     - uses: actions/upload-artifact@v2
       with:
