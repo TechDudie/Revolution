@@ -1,3 +1,4 @@
+from PIL import ImageTk, Image
 import tkinter as tk
 import os
 
@@ -7,7 +8,7 @@ class Tile:
     def __init__(self, canvas: tk.Canvas, name: str):
         self.canvas = canvas
         self.name = name
-        self.image = tk.PhotoImage(file=f"{tile_path}{name}.png")
+        self.image = ImageTk.PhotoImage(Image.open(f"{tile_path}{name}.png"))
         self.metadata = {}
     
     def draw(self, x: int, y: int):

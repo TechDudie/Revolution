@@ -1,3 +1,4 @@
+from PIL import ImageTk, Image
 import tkinter as tk
 import math
 import os
@@ -55,7 +56,7 @@ class CraftFrame(Window):
     def setup(self):
         self.hotbar = tk.Frame(self.frame, width=578, height=34, highlightthickness=0, background="#ff0000")
         self.hotbar.place(x=32, y=256)
-        self.hotbar_background_image = tk.PhotoImage(file=f"{hotbar_path}hotbar.png")
+        self.hotbar_background_image = ImageTk.PhotoImage(Image.open(f"{hotbar_path}hotbar.png"))
         self.hotbar_background = tk.Label(self.hotbar, width=578, height=34, image=self.hotbar_background_image)
         self.hotbar_background.place(x=-2, y=-2)
         item_canvases.append(ItemCanvas(self.hotbar, "log"))

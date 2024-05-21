@@ -35,7 +35,19 @@ def lclick(event: tk.Event):
         pass
 
 def rclick(event: tk.Event):
-    pass
+    global map
+    for structure in registered_structures:
+        if structure.click(event) == True:
+            return
+    x = math.floor(event.x / 32)
+    y = math.floor(event.y / 32)
+    try:
+        # if map.safe_create("log", x, y):
+        #     remove_item("log", 1)
+        if remove_item("log", 1) != -1:
+            map.create("log", x, y)
+    except AttributeError:
+        pass
 
 def key(event: tk.Event):
     if event.char == "c":

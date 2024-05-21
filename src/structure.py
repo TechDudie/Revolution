@@ -1,3 +1,4 @@
+from PIL import ImageTk, Image
 import tkinter as tk
 import os
 
@@ -15,7 +16,7 @@ class Structure:
         self.width = 0
         self.hp = 1
         self.setup()
-        self.image = tk.PhotoImage(file=f"{structure_path}{self.name}.png")
+        self.image = ImageTk.PhotoImage(Image.open(f"{structure_path}{self.name}.png"))
         self.location = (-1, -1)
         self.click_register()
     

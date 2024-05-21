@@ -27,7 +27,7 @@ setupCraft(craft)
 setupHUD()
 
 canvas.bind("<Button-1>", lclick)
-canvas.bind("<Button-3>", rclick)
+canvas.bind("<Button-2>", rclick)
 root.bind("<KeyPress>", key)
 
 root.mainloop()

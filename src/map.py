@@ -43,6 +43,7 @@ class Map:
             self.map[y][x] = Tile(self.canvas, tile)
             self.map[y][x].draw(x, y)
             return True
+        return False
     
     def delete(self, x: int, y: int):
         self.map[y][x] = None

@@ -52,7 +52,11 @@ def add_item(type: str, quantity: int) -> int:
     return inventory[index_item(type)][1]
 
 def remove_item(type: str, quantity: int) -> int:
-    inventory[index_item(type)][1] -= quantity
+    x = inventory[index_item(type)][1] - quantity
+    if x > -1:
+        inventory[index_item(type)][1] = x
+    else:
+        return -1
     updateHUD(type)
     return inventory[index_item(type)][1]
 
@@ -77,9 +81,10 @@ def updateHUD(type):
     global canvas
     global hotbar
     canvas.create_rectangle(0, 544, 128, 640, outline="", fill="#000000")
-    hotbar = Tile(canvas, inventory[0][0])
-    hotbar.draw(1, 18)
-    canvas.create_text(80, 592, text=str(get_item(type)), fill="#ffffff", font=('Arial 16'))
+    if inventory[0][0] != "":
+        hotbar = Tile(canvas, inventory[0][0])
+        hotbar.draw(1, 18)
+        canvas.create_text(80, 592, text=str(get_item(type)), fill="#ffffff", font=('Arial 16'))
     update() # type: ignore
 
 from .craft import *
